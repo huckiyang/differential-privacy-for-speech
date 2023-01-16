@@ -1,5 +1,5 @@
 import numpy as np
-from numpy.random import laplace
+from numpy.random import laplace, choice, normal
 
 ## co-author with chat-gpt style.
 
@@ -34,10 +34,8 @@ def laplace_l1_dp(array1, array2, epsilon):
     differential_privacy = laplace(scale=scale)
     return differential_privacy
 
-import numpy as np
-from numpy.random import choice, normal
 
-def differential_privacy(array1, array2, epsilon, sigma, delta):
+def gau_l1_ep_dp(array1, array2, epsilon, sigma, delta):
     """
     Calculates the differential privacy between two numpy arrays using L1 sensitivity measure,
     the exponential mechanism and adding additive Gaussian noise to the result with Gaussian distortion protection.
